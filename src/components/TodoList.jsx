@@ -8,7 +8,7 @@ export default function TodoList({ isDone }) {
     <section>
       <h2>{isDone === false ? 'Working...' : 'Done!'}</h2>
       <ul>
-        { todos.filter(todo => todo.isDone === false)
+        { todos.filter(todo => todo.isDone === isDone)
         .map((todo, index) => <TodoItem key={index} todo={todo} /> )}
       </ul>
     </section>
