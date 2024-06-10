@@ -25,20 +25,20 @@ const todoSlice = createSlice({
       state.push(nextTodo);
     },
     deleteTodo: (state, action) => {
+
       const id = action.payload;
       const index = state.findIndex(item => item.id === id);
-
+      
       if(index !== -1) {
-        state.slice(index, 1);
+        state.splice(index, 1);
       }
     },
     toggleTodo: (state, action) => {
       const id = action.payload;
       const index = state.findIndex(item => item.id === id);
-
+      console.log(index)
       if(index !== -1){
-        !state[index].isDone
-        // map문 돌고 반복 id 일치하면 isDone 변경...
+        state[index].isDone = !state[index].isDone; 
       }
     }
   }
